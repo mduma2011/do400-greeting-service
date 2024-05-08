@@ -27,6 +27,7 @@ pipeline{
                 sh '''
                     oc project wswgiw-greetings
                     oc start-build greeting-service --follow --wait
+                   '''
             }
         }
     }
