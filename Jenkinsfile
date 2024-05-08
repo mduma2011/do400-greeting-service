@@ -22,5 +22,12 @@ pipeline{
         }
 
         // Add the "Deploy" stage here
+        stage('Deploy') {
+            steps {
+                sh '''
+                    oc project wswgiw-greetings
+                    oc start-build greeting-service --follow --wait
+            }
+        }
     }
 }
